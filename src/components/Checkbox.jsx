@@ -9,7 +9,7 @@ const Checkbox = ({ checked, onChange, indeterminate = false }) => {
   return (
     <div
       onClick={handleClick}
-      className={`w-5 h-5 rounded border-2 flex items-center justify-center cursor-pointer transition-all duration-200
+      className={`w-[23px] h-[23px] rounded-[6px] border-2 flex items-center justify-center cursor-pointer transition-all duration-200
         ${checked || indeterminate ? "bg-[#2469F6] border-[#2469F6]" : "bg-white border-gray-300 group-hover:border-gray-400"}`}>
       {/* Checked state - solid checkmark */}
       {checked && (
