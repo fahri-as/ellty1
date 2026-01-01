@@ -44,18 +44,18 @@ const PageSelector = ({ onDone }) => {
   };
 
   return (
-    <div className="w-64 bg-white rounded-lg shadow-lg border border-gray-100 overflow-hidden">
+    <div className="w-[370px] bg-white rounded-[6px] shadow-lg border border-gray-200 pt-[10px] pb-[10px]">
       {/* All pages option */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
-        <span className="text-gray-700 text-sm">All pages</span>
+        <span className="font-['Montserrat'] text-[14px] font-normal leading-[130%] text-gray-700">All pages</span>
         <Checkbox checked={allPagesChecked} onChange={handleAllPagesChange} indeterminate={isIndeterminate} />
       </div>
 
       {/* Individual pages */}
-      <div className="divide-y divide-gray-50">
+      <div>
         {pages.map((page) => (
           <div key={page.id} className="flex items-center justify-between px-4 py-3 hover:bg-gray-50 transition-colors">
-            <span className="text-gray-700 text-sm">{page.name}</span>
+            <span className="font-['Montserrat'] text-[14px] font-normal leading-[130%] text-gray-700">{page.name}</span>
             <Checkbox checked={page.checked} onChange={(checked) => handlePageChange(page.id, checked)} />
           </div>
         ))}
@@ -65,7 +65,7 @@ const PageSelector = ({ onDone }) => {
       <div className="border-t border-gray-200"></div>
 
       {/* Done button */}
-      <div className="p-4">
+      <div className="px-4 py-3">
         <Button onClick={handleDone}>Done</Button>
       </div>
     </div>
