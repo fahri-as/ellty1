@@ -44,7 +44,9 @@ const PageSelector = ({ onDone }) => {
   };
 
   return (
-    <div className="w-[370px] bg-white rounded-[6px] shadow-lg border border-gray-200 pt-[10px] pb-[10px]">
+    <div
+      className="w-[370px] bg-white rounded-[6px] border border-gray-200 pt-[10px] pb-[10px]"
+      style={{ boxShadow: "0px 8px 15px 0px rgba(20, 20, 20, 0.12), 0px 0px 4px 0px rgba(20, 20, 20, 0.10)" }}>
       {/* All pages option */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
         <span className="font-['Montserrat'] text-[14px] font-normal leading-[130%] text-gray-700">All pages</span>
