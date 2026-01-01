@@ -1,16 +1,117 @@
-# React + Vite
+# Page Selector Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React component for selecting pages with an interactive checkbox list, built with React and Tailwind CSS.
 
-Currently, two official plugins are available:
+![Page Selector Preview](./preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- ✅ **All Pages Toggle** - Select or deselect all pages at once
+- ✅ **Individual Selection** - Select pages individually
+- ✅ **Indeterminate State** - Shows partial selection state on "All pages" checkbox
+- ✅ **Hover Effect** - Displays checkmark outline when hovering over unchecked items
+- ✅ **Done Button** - Confirms selection with visual feedback
+- ✅ **Clean UI** - Modern, minimal design with smooth transitions
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **React** - UI library
+- **Vite** - Build tool and dev server
+- **Tailwind CSS v4** - Utility-first CSS framework
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+cd ellty
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
+
+```bash
+npm run dev
+```
+
+4. Open your browser at `http://localhost:5173`
+
+## Project Structure
+
+```
+ellty/
+├── src/
+│   ├── components/
+│   │   ├── Button.jsx        # Reusable yellow button component
+│   │   ├── Checkbox.jsx      # Custom checkbox with hover state
+│   │   └── PageSelector.jsx  # Main page selector card
+│   ├── App.jsx               # Main application
+│   ├── index.css             # Tailwind CSS imports
+│   └── main.jsx              # React entry point
+├── index.html
+├── vite.config.js
+├── package.json
+└── README.md
+```
+
+## Components
+
+### Button
+
+A reusable button component with yellow background and hover effect.
+
+```jsx
+<Button onClick={handleClick}>Done</Button>
+```
+
+### Checkbox
+
+Custom checkbox with three states:
+
+- **Unchecked** - Gray border, shows checkmark on hover
+- **Checked** - Blue background with white checkmark
+- **Indeterminate** - Blue background with horizontal line
+
+```jsx
+<Checkbox checked={isChecked} onChange={setIsChecked} indeterminate={isPartial} />
+```
+
+### PageSelector
+
+Main component combining checkboxes and button.
+
+```jsx
+<PageSelector onDone={(selectedPages) => console.log(selectedPages)} />
+```
+
+## Usage Example
+
+```jsx
+import PageSelector from "./components/PageSelector";
+
+function App() {
+  const handleDone = (selectedPages) => {
+    console.log("Selected:", selectedPages);
+  };
+
+  return <PageSelector onDone={handleDone} />;
+}
+```
+
+## Scripts
+
+| Command           | Description              |
+| ----------------- | ------------------------ |
+| `npm run dev`     | Start development server |
+| `npm run build`   | Build for production     |
+| `npm run preview` | Preview production build |
+
+## License
+
+MIT
