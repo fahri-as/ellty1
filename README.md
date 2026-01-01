@@ -112,6 +112,4 @@ function App() {
 | `npm run build`   | Build for production     |
 | `npm run preview` | Preview production build |
 
-## License
 
-MIT
