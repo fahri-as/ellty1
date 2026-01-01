@@ -9,12 +9,12 @@ const Checkbox = ({ checked, onChange, indeterminate = false }) => {
   return (
     <div
       onClick={handleClick}
-      className={`w-[23px] h-[23px] rounded-[6px] border-2 flex items-center justify-center cursor-pointer transition-all duration-200
-        ${checked || indeterminate ? "bg-[#2469F6] border-[#2469F6]" : "bg-white border-gray-300 group-hover:border-gray-400"}`}>
+      className={`w-[23px] h-[23px] rounded-[6px] border flex items-center justify-center cursor-pointer transition-all duration-200
+        ${checked || indeterminate ? "bg-[#2469F6] border-[#2469F6]" : "bg-white border-[#CDCDCD] group-hover:border-[#BDBDBD]"}`}>
       {/* Checked state - solid checkmark */}
       {checked && (
-        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+        <svg className="text-white" width="15.64" height="11.04" viewBox="0 0 16 12" fill="none" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M1 6l5 5L15 1" />
         </svg>
       )}
 
@@ -24,11 +24,13 @@ const Checkbox = ({ checked, onChange, indeterminate = false }) => {
       {/* Hover state - show outline checkmark when not checked */}
       {!checked && !indeterminate && (
         <svg
-          className="w-3 h-3 text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+          className="text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+          width="15.64"
+          height="11.04"
+          viewBox="0 0 16 12"
           fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+          stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M1 6l5 5L15 1" />
         </svg>
       )}
     </div>
