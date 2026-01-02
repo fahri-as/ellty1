@@ -11,19 +11,13 @@ const PageSelector = ({ onDone }) => {
   ]);
 
   const [allPagesChecked, setAllPagesChecked] = useState(false);
-  const [isIndeterminate, setIsIndeterminate] = useState(false);
 
   useEffect(() => {
     const checkedCount = pages.filter((page) => page.checked).length;
-    if (checkedCount === 0) {
-      setAllPagesChecked(false);
-      setIsIndeterminate(false);
-    } else if (checkedCount === pages.length) {
+    if (checkedCount === pages.length) {
       setAllPagesChecked(true);
-      setIsIndeterminate(false);
     } else {
       setAllPagesChecked(false);
-      setIsIndeterminate(true);
     }
   }, [pages]);
 
@@ -52,7 +46,7 @@ const PageSelector = ({ onDone }) => {
         className="group flex items-center justify-between px-4 h-[42px] cursor-pointer hover:bg-gray-50 transition-colors"
         onClick={() => handleAllPagesChange(!allPagesChecked)}>
         <span className="font-['Montserrat'] text-[14px] font-normal leading-[130%] text-gray-700">All pages</span>
-        <Checkbox checked={allPagesChecked} onChange={handleAllPagesChange} indeterminate={isIndeterminate} />
+        <Checkbox checked={allPagesChecked} onChange={handleAllPagesChange} />
       </div>
 
       {/* Separator line after All pages */}

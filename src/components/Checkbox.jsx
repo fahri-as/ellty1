@@ -10,7 +10,11 @@ const Checkbox = ({ checked, onChange, indeterminate = false }) => {
     <div
       onClick={handleClick}
       className={`w-[23px] h-[23px] rounded-[6px] border flex items-center justify-center cursor-pointer transition-all duration-200
-        ${checked || indeterminate ? "bg-[#2469F6] border-[#2469F6]" : "bg-white border-[#CDCDCD] group-hover:border-[#BDBDBD]"}`}>
+        ${
+          checked || indeterminate
+            ? "bg-[#2469F6] border-[#2469F6] group-hover:bg-[#5087F8] group-hover:border-[#5087F8]"
+            : "bg-white border-[#CDCDCD] group-hover:border-[#BDBDBD]"
+        }`}>
       {/* Checked state - solid checkmark */}
       {checked && (
         <svg className="text-white" width="15.64" height="11.04" viewBox="0 0 16 12" fill="none" stroke="currentColor">
