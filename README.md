@@ -2,6 +2,8 @@
 
 This repository contains the solution for the Frontend Test Assignment: creating a pixel-perfect `PageSelector` component based on Figma specifications.
 
+**Live Demo:** [https://ellty1-three.vercel.app/](https://ellty1-three.vercel.app/)
+
 ## 🚀 Features & Implementation
 
 The component has been built to strictly fully comply with the **9 provided requirements**:
