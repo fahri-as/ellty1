@@ -8,7 +8,8 @@ The component has been built to strictly fully comply with the **9 provided requ
 
 1.  ✅ **All 8 Checkbox States**: Fully implemented including:
     - **Unchecked**: Default, Hover (Light gray checkmark `#E3E3E3`), Pressed (Darker gray checkmark `#878787`).
-    - **Checked**: Default (Blue `#2469F6`), Hover (Lighter `#5087F8`), Pressed (Darker `#1E5AD8`).
+    - **Checked**: Default (Blue `#2469F6`), Hover (Lighter `#5087F8`), Pressed (`#2469F6` with thicker border).
+    - **Pressed Visual**: Includes "Halo" ring effect (10% opacity) on Click & Hold.
 2.  ✅ **Button States**: Default, Hover, and Pressed states with accurate color transitions.
 3.  ✅ **Component Dimensions**: Exact width of **370px** verified.
 4.  ✅ **Button Dimensions**: Exact size of **340x40px**.
@@ -17,6 +18,11 @@ The component has been built to strictly fully comply with the **9 provided requ
 7.  ✅ **Colors**: All hex codes matched exactly to design specs.
 8.  ✅ **Layout & Spacing**: Pixel-perfect padding (Row: `8px 15px 8px 30px`, Separators: `10px 15px`).
 9.  ✅ **Auto-Selection Logic**: "All pages" checkbox automatically updates based on individual selections.
+
+## 🌟 Enhanced User Experience
+
+- **Row Interaction**: Clicking and holding _anywhere_ on a page row (text or whitespace) triggers the checkbox "Pressed" state visual, providing a tactile feel.
+- **Hidden Scrollbar**: Custom CSS utility ensures the list is scrollable without visual clutter.
 
 ## 🛠 Tech Stack
 
@@ -31,7 +37,7 @@ ellty/
 ├── src/
 │   ├── components/
 │   │   ├── Button.jsx        # Custom Button with 3 states (Default, Hover, Pressed)
-│   │   ├── Checkbox.jsx      # Custom Checkbox with 8 distinct visual states
+│   │   ├── Checkbox.jsx      # Custom Checkbox with 8 distinct visual states + Halo effect
 │   │   └── PageSelector.jsx  # Main container with scrolling logic and layout
 │   ├── App.jsx               # Entry point
 │   └── index.css             # Tailwind imports & custom utilities (scrollbar-hide)
@@ -62,7 +68,7 @@ ellty/
 A highly interactive component that handles complex logic for visual feedback:
 
 - **Hovering** an unchecked box shows a subtle visual cue (light gray checkmark) before selection.
-- **Pressing** (mouse down) gives immediate feedback with a darker outline/checkmark.
+- **Pressing** (mouse down) on the box OR the row text activates the **"Halo" ring effect** (10% opacity blue ring) for immediate feedback.
 
 ### PageSelector
 
