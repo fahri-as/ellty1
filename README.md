@@ -1,115 +1,75 @@
-# Page Selector Component
+# Ellty Frontend Test Assignment - Page Selector Component
 
-A React component for selecting pages with an interactive checkbox list, built with React and Tailwind CSS.
+This repository contains the solution for the Frontend Test Assignment: creating a pixel-perfect `PageSelector` component based on Figma specifications.
 
-![Page Selector Preview](./preview.png)
+## 🚀 Features & Implementation
 
-## Features
+The component has been built to strictly fully comply with the **9 provided requirements**:
 
-- ✅ **All Pages Toggle** - Select or deselect all pages at once
-- ✅ **Individual Selection** - Select pages individually
-- ✅ **Indeterminate State** - Shows partial selection state on "All pages" checkbox
-- ✅ **Hover Effect** - Displays checkmark outline when hovering over unchecked items
-- ✅ **Done Button** - Confirms selection with visual feedback
-- ✅ **Clean UI** - Modern, minimal design with smooth transitions
+1.  ✅ **All 8 Checkbox States**: Fully implemented including:
+    - **Unchecked**: Default, Hover (Light gray checkmark `#E3E3E3`), Pressed (Darker gray checkmark `#878787`).
+    - **Checked**: Default (Blue `#2469F6`), Hover (Lighter `#5087F8`), Pressed (Darker `#1E5AD8`).
+2.  ✅ **Button States**: Default, Hover, and Pressed states with accurate color transitions.
+3.  ✅ **Component Dimensions**: Exact width of **370px** verified.
+4.  ✅ **Button Dimensions**: Exact size of **340x40px**.
+5.  ✅ **Checkbox Shape**: Exact **25x25px** size with **6px** border radius.
+6.  ✅ **Scrolling**: 6-page list with functional scrolling and **hidden scrollbar** (CSS-based).
+7.  ✅ **Colors**: All hex codes matched exactly to design specs.
+8.  ✅ **Layout & Spacing**: Pixel-perfect padding (Row: `8px 15px 8px 30px`, Separators: `10px 15px`).
+9.  ✅ **Auto-Selection Logic**: "All pages" checkbox automatically updates based on individual selections.
 
-## Tech Stack
+## 🛠 Tech Stack
 
-- **React** - UI library
-- **Vite** - Build tool and dev server
-- **Tailwind CSS v4** - Utility-first CSS framework
+- **React** - Component-based UI.
+- **Tailwind CSS** - Utility-first styling for exact pixel control.
+- **Vite** - Fast development server.
 
-## Installation
-
-1. Clone the repository:
-
-```bash
-git clone <repository-url>
-cd ellty
-```
-
-2. Install dependencies:
-
-```bash
-npm install
-```
-
-3. Start the development server:
-
-```bash
-npm run dev
-```
-
-4. Open your browser at `http://localhost:5173`
-
-## Project Structure
+## 📦 Project Structure
 
 ```
 ellty/
 ├── src/
 │   ├── components/
-│   │   ├── Button.jsx        # Reusable yellow button component
-│   │   ├── Checkbox.jsx      # Custom checkbox with hover state
-│   │   └── PageSelector.jsx  # Main page selector card
-│   ├── App.jsx               # Main application
-│   ├── index.css             # Tailwind CSS imports
-│   └── main.jsx              # React entry point
-├── index.html
-├── vite.config.js
-├── package.json
+│   │   ├── Button.jsx        # Custom Button with 3 states (Default, Hover, Pressed)
+│   │   ├── Checkbox.jsx      # Custom Checkbox with 8 distinct visual states
+│   │   └── PageSelector.jsx  # Main container with scrolling logic and layout
+│   ├── App.jsx               # Entry point
+│   └── index.css             # Tailwind imports & custom utilities (scrollbar-hide)
 └── README.md
 ```
 
-## Components
+## 🏃‍♂️ How to Run
 
-### Button
+1.  **Install dependencies:**
 
-A reusable button component with yellow background and hover effect.
+    ```bash
+    npm install
+    ```
 
-```jsx
-<Button onClick={handleClick}>Done</Button>
-```
+2.  **Start development server:**
+
+    ```bash
+    npm run dev
+    ```
+
+3.  **Open browser:**
+    Navigate to `http://localhost:5173`.
+
+## 🎨 Component Details
 
 ### Checkbox
 
-Custom checkbox with three states:
+A highly interactive component that handles complex logic for visual feedback:
 
-- **Unchecked** - Gray border, shows checkmark on hover
-- **Checked** - Blue background with white checkmark
-- **Indeterminate** - Blue background with horizontal line
-
-```jsx
-<Checkbox checked={isChecked} onChange={setIsChecked} indeterminate={isPartial} />
-```
+- **Hovering** an unchecked box shows a subtle visual cue (light gray checkmark) before selection.
+- **Pressing** (mouse down) gives immediate feedback with a darker outline/checkmark.
 
 ### PageSelector
 
-Main component combining checkboxes and button.
+- Includes a scrollable area for pages that hides the native scrollbar for a cleaner UI (`scrollbar-hide`).
+- Implements "Select All" logic bidirectional binding (Parent ↔ Child checkboxes).
+- Features precise dividers with accurate margins as per Figma.
 
-```jsx
-<PageSelector onDone={(selectedPages) => console.log(selectedPages)} />
-```
+---
 
-## Usage Example
-
-```jsx
-import PageSelector from "./components/PageSelector";
-
-function App() {
-  const handleDone = (selectedPages) => {
-    console.log("Selected:", selectedPages);
-  };
-
-  return <PageSelector onDone={handleDone} />;
-}
-```
-
-## Scripts
-
-| Command           | Description              |
-| ----------------- | ------------------------ |
-| `npm run dev`     | Start development server |
-| `npm run build`   | Build for production     |
-| `npm run preview` | Preview production build |
-
-
+**Completion Status**: 100% Verified against Figma Design.

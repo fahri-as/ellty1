@@ -47,7 +47,7 @@ const PageSelector = ({ onDone }) => {
       }}>
       {/* All pages option */}
       <div
-        className="group flex items-center justify-between h-[42px] cursor-pointer hover:bg-[#F4F4F4] transition-colors"
+        className="group flex items-center justify-between h-[42px] cursor-pointer transition-colors"
         style={{ padding: "8px 15px 8px 30px" }}
         onClick={() => handleAllPagesChange(!allPagesChecked)}>
         <span className="font-['Montserrat'] text-[14px] font-normal leading-[130%] text-[#1F2128]">All pages</span>
@@ -55,7 +55,7 @@ const PageSelector = ({ onDone }) => {
       </div>
 
       {/* Separator line after All pages */}
-      <div style={{ padding: "0 15px" }}>
+      <div style={{ padding: "10px 15px 10px 15px" }}>
         <div className="border-t border-[#EEEEEE]"></div>
       </div>
 
@@ -70,7 +70,7 @@ const PageSelector = ({ onDone }) => {
         {pages.map((page) => (
           <div
             key={page.id}
-            className="group flex items-center justify-between h-[42px] hover:bg-[#F4F4F4] transition-colors cursor-pointer"
+            className="group flex items-center justify-between h-[42px] transition-colors cursor-pointer"
             style={{ padding: "8px 15px 8px 30px" }}
             onClick={() => handlePageChange(page.id, !page.checked)}>
             <span className="font-['Montserrat'] text-[14px] font-normal leading-[130%] text-[#1F2128]">{page.name}</span>
@@ -85,7 +85,7 @@ const PageSelector = ({ onDone }) => {
       </div>
 
       {/* Done button */}
-      <div style={{ padding: "0 15px 0 15px" }}>
+      <div style={{ padding: "10px 15px 10px 15px" }}>
         <Button onClick={handleDone}>Done</Button>
       </div>
     </div>
