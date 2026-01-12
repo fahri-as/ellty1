@@ -50,7 +50,7 @@ const Checkbox = ({ checked, onChange, indeterminate = false }) => {
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseLeave}
       className={`w-[25px] h-[25px] rounded-[6px] border flex items-center justify-center cursor-pointer transition-all duration-200 ${getStyles()} ${
-        isPressed ? "ring-[3px] ring-[#2469F6] ring-opacity-10 dark:ring-opacity-10" : ""
+        isPressed ? "ring-[3px] ring-[rgba(36,105,246,0.1)]" : ""
       }`}>
       {/* Checked state - solid checkmark */}
       {checked && (
