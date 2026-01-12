@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
-const Checkbox = ({ checked, onChange, indeterminate = false }) => {
-  const [isPressed, setIsPressed] = useState(false);
+const Checkbox = ({ checked, onChange, indeterminate = false, isPressed: isPressedProp = false }) => {
+  const [internalIsPressed, setInternalIsPressed] = useState(false);
+  const isPressed = internalIsPressed || isPressedProp;
 
   const handleClick = (e) => {
     e.stopPropagation();
@@ -10,16 +11,16 @@ const Checkbox = ({ checked, onChange, indeterminate = false }) => {
 
   const handleMouseDown = (e) => {
     e.stopPropagation();
-    setIsPressed(true);
+    setInternalIsPressed(true);
   };
 
   const handleMouseUp = (e) => {
     e.stopPropagation();
-    setIsPressed(false);
+    setInternalIsPressed(false);
   };
 
   const handleMouseLeave = () => {
-    setIsPressed(false);
+    setInternalIsPressed(false);
   };
 
   // Determine background and border colors based on state

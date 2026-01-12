@@ -13,6 +13,8 @@ const PageSelector = ({ onDone }) => {
   ]);
 
   const [allPagesChecked, setAllPagesChecked] = useState(false);
+  const [pressedPageId, setPressedPageId] = useState(null);
+  const [isAllPagesPressed, setIsAllPagesPressed] = useState(false);
 
   useEffect(() => {
     const checkedCount = pages.filter((page) => page.checked).length;
@@ -49,9 +51,12 @@ const PageSelector = ({ onDone }) => {
       <div
         className="group flex items-center justify-between h-[42px] cursor-pointer transition-colors"
         style={{ padding: "8px 15px 8px 30px" }}
+        onMouseDown={() => setIsAllPagesPressed(true)}
+        onMouseUp={() => setIsAllPagesPressed(false)}
+        onMouseLeave={() => setIsAllPagesPressed(false)}
         onClick={() => handleAllPagesChange(!allPagesChecked)}>
         <span className="font-['Montserrat'] text-[14px] font-normal leading-[130%] text-[#1F2128]">All pages</span>
-        <Checkbox checked={allPagesChecked} onChange={handleAllPagesChange} />
+        <Checkbox checked={allPagesChecked} onChange={handleAllPagesChange} isPressed={isAllPagesPressed} />
       </div>
 
       {/* Separator line after All pages */}
@@ -72,9 +77,12 @@ const PageSelector = ({ onDone }) => {
             key={page.id}
             className="group flex items-center justify-between h-[42px] transition-colors cursor-pointer"
             style={{ padding: "8px 15px 8px 30px" }}
+            onMouseDown={() => setPressedPageId(page.id)}
+            onMouseUp={() => setPressedPageId(null)}
+            onMouseLeave={() => setPressedPageId(null)}
             onClick={() => handlePageChange(page.id, !page.checked)}>
             <span className="font-['Montserrat'] text-[14px] font-normal leading-[130%] text-[#1F2128]">{page.name}</span>
-            <Checkbox checked={page.checked} onChange={(checked) => handlePageChange(page.id, checked)} />
+            <Checkbox checked={page.checked} onChange={(checked) => handlePageChange(page.id, checked)} isPressed={pressedPageId === page.id} />
           </div>
         ))}
       </div>
