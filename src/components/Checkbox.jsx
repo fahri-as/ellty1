@@ -35,8 +35,8 @@ const Checkbox = ({ checked, onChange, indeterminate = false }) => {
     } else {
       // Unchecked states
       if (isPressed) {
-        // State 3: Unchecked pressed (no bg change, just border)
-        return "bg-white border-[#ADADAD]";
+        // State 3: Unchecked pressed (White bg, #BDBDBD border, Ring effect handled in className)
+        return "bg-white border-[#BDBDBD]";
       }
       // State 1/2: Unchecked default/hover
       return "bg-white border-[#CDCDCD] group-hover:border-[#BDBDBD]";
@@ -49,7 +49,9 @@ const Checkbox = ({ checked, onChange, indeterminate = false }) => {
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseLeave}
-      className={`w-[25px] h-[25px] rounded-[6px] border flex items-center justify-center cursor-pointer transition-all duration-200 ${getStyles()}`}>
+      className={`w-[25px] h-[25px] rounded-[6px] border flex items-center justify-center cursor-pointer transition-all duration-200 ${getStyles()} ${
+        isPressed ? "ring-[3px] ring-[#2469F6] ring-opacity-10 dark:ring-opacity-10" : ""
+      }`}>
       {/* Checked state - solid checkmark */}
       {checked && (
         <svg className="text-white" width="17" height="12" viewBox="0 0 17 12" fill="none" xmlns="http://www.w3.org/2000/svg">
