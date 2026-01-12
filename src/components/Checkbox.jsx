@@ -27,8 +27,8 @@ const Checkbox = ({ checked, onChange, indeterminate = false }) => {
     if (checked || indeterminate) {
       // Checked/Indeterminate states
       if (isPressed) {
-        // State 6: Checked pressed / State 8: Indeterminate pressed
-        return "bg-[#1E5AD8] border-[#1E5AD8]";
+        // State 6/7: Checked pressed (Same color as default, thicker border per Figma)
+        return "bg-[#2469F6] border-[#2469F6] border-[3px]";
       }
       // State 4/5: Checked default/hover, State 7: Indeterminate default
       return "bg-[#2469F6] border-[#2469F6] group-hover:bg-[#5087F8] group-hover:border-[#5087F8]";
